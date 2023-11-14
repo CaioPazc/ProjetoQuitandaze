@@ -9,11 +9,11 @@
     <div class="container text-center">
         <ul class="list-group mb-3 d-flex flex-row">
             <div class="row g-3">
-                {% for produtos in produtos %}
+                {% for produto in produtos %}
                 <div class="col-12 col-md-10 col-lg mx-auto">
-                    <li class="list-group-item py-1 d-flex aling-item-center" style="height: 220px;">
+                    <li class="list-group-item py-1 d-flex align-items-center" style="height: 220px;">
                         <div class="col-3 me-3 mh-100">
-                            <img src=".../static/img/produtos/{{ produtos['img_prod'] }}" class="img-thumbnail mh-100" />
+                            <img src="../static/img/produtos/{{ produto['img_prod'] }}" class="img-thumbnail mh-100" />
                         </div>
                         <div class="col-5">
                             <h4 class="text-danger"> {{ produto['nome_prod'] }} </h4>
@@ -31,11 +31,12 @@
                 {% endfor %}
             </div>
         </ul>
-        {% endif %}
-        <div class="container text-center">
-            <button type="button" onclick="window.location.href='/cadprodutos'"
-                class="btn btn-lg btn-success mx-5">Cadastrar</button>
-            <button type="button" onclick="window.location.href='/logout'" class="btn btn-lg btn-danger mx-5">Sair</button>
-        </div>
     </div>
+{% endif %}
+<div class="container text-center">
+    <button type="button" onclick="window.location.href='/cadprodutos'"
+        class="btn btn-lg btn-success mx-5">Cadastrar</button>
+    <button type="button" onclick="window.location.href='/logout'" class="btn btn-lg btn-danger mx-5">Sair</button>
+</div>
+
 {% endblock %}
