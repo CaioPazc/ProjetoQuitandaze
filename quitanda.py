@@ -63,7 +63,6 @@ def acesso():
 @app.route("/adm")
 def adm():
     if verifica_sessao():
-        iniciar_db()
         conexao = conecta_database()
         produtos = conexao.execute('SELECT * FROM produtos ORDER BY id_prod DESC').fetchall()
         conexao.close()
